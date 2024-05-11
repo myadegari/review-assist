@@ -1,4 +1,3 @@
-import React from 'react'
 import { Navigate,useParams } from "react-router-dom";
 import useFilterHelper from './helper/filterHelper';
 import { Reading } from './interfaces/readingInterface';
@@ -6,7 +5,6 @@ import persian from "react-date-object/calendars/persian"
 import persian_fa from "react-date-object/locales/persian_fa"
 import { DateObject } from "react-multi-date-picker";
 import classNames from 'classnames';
-// import content from './content/listOfAll';
 import { baseURL } from './routes';
 import { PiDropboxLogoDuotone } from 'react-icons/pi';
 
