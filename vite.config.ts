@@ -8,7 +8,4 @@ export default defineConfig({
     react(),
     compression()
   ],
-  server:{
-    port:3002,
-  }
 })

@@ -1,5 +1,6 @@
 {
   "name": "review-assist",
+  "homepage": "https://myadegari.github.io/review-assist",
   "private": true,
   "version": "0.0.0",
   "type": "module",
