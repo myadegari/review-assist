@@ -14,11 +14,7 @@ export default function ListOfAll() {
   const { extractTitles, filterByTitle } = useFilterHelper()
   const [filterTitle, setFilterTitle] = React.useState<string | undefined>(undefined)
   const location = useLocation()
-  // React.useEffect(() => {
-  //   if (readings.length) {
-  //     navigate(baseURL + `list-of-all/${readings[readings.length - 1].id}`)
-  //   }
-  // }, [readings, navigate])
+
 
   return (
     <div className="bg-slate-50 p-4 rounded-b-xl text-gray-700 grid md:grid-cols-2 py-5 px-12 gap-5 ">

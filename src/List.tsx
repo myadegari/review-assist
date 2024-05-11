@@ -5,7 +5,7 @@ import persian from "react-date-object/calendars/persian"
 import persian_fa from "react-date-object/locales/persian_fa"
 import { DateObject } from "react-multi-date-picker";
 import classNames from 'classnames';
-import { baseURL } from './routes';
+import { isolateBaseURL } from './routes';
 import { PiDropboxLogoDuotone } from 'react-icons/pi';
 
 export default function List() {
@@ -50,7 +50,7 @@ export default function List() {
     }
     else{
         return (
-           <Navigate to={baseURL+'list-of-all/'} replace={true}/>
+           <Navigate to={isolateBaseURL+'list-of-all/'} replace={true}/>
         );
     }
 }

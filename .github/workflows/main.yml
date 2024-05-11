@@ -51,23 +51,28 @@ jobs:
         run: pnpm run build
         env:
           NODE_ENV: production
-          PUBLIC_URL: /${GITHUB_REPO}/
-      - name: Update asset URLs
-        run: |
-            sed -i '|"/assets/|"/${GITHUB_REPO}/assets/|g'
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v3
         with:
-          path: ./dist
+            name: production-files
+            path: ./dist
 
   # Deployment job
   deploy:
-    environment:
-      name: github-pages2
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    name: Deploy
     needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: production-files
+          path: ./dist
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

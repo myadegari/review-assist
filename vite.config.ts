@@ -8,4 +8,5 @@ export default defineConfig({
     react(),
     compression()
   ],
+  base:'/review-assist/'
 })
