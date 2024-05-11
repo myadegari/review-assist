@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import content from './content/listOfAll'
 import { Link, Outlet,useLocation } from 'react-router-dom'
 import { PiBarcodeDuotone,PiBookOpenTextDuotone,PiDropboxLogoDuotone,PiXCircleDuotone } from "react-icons/pi";
-import { baseURL } from './routes'
+import { isolateBaseURL } from './routes'
 
 
 export default function ListOfAll() {
@@ -47,20 +47,20 @@ export default function ListOfAll() {
         }
 
         </fieldset>
-        <fieldset className='flex flex-col pr-5 py-1 border rounded-xl border-slate-300'>
+        <fieldset className='flex flex-col pr-5 py-2 border rounded-xl border-slate-300'>
           <legend className='flex items-center gap-2 px-2 font-bold'>
             <PiBookOpenTextDuotone style={{fontSize:"1.5rem"}}/>
             {content.reads}</legend>
-          <div className='grid gap-2 max-h-[400px] overflow-y-auto scrollbar scrollbar-thumb-gray-200 scrollbar-w-1 scrollbar-thumb-rounded-xl pl-2'>
+          <div className='grid gap-2 max-h-[400px] overflow-y-auto scrollbar scrollbar-thumb-gray-200 scrollbar-w-1 scrollbar-thumb-rounded-xl pl-5'>
           {readings.length?(
           
           filterByTitle(filterTitle).map((reading) => (
             <Link
             key={reading.id}
-              to={baseURL + 'list-of-all/' + reading.id}
+              to={isolateBaseURL + 'list-of-all/' + reading.id}
               className={classNames('py-2 px-4 flex items-center justify-between rounded-xl border-2 ',
-              {"bg-slate-500 text-slate-50 border-slate-500":location.pathname==baseURL+`list-of-all/${reading.id}`,
-              "bg-slate-100 text-slate-600 border-slate-400":location.pathname!=baseURL+`list-of-all/${reading.id}`})}>
+              {"bg-slate-500 text-slate-50 border-slate-500":location.pathname==isolateBaseURL+`list-of-all/${reading.id}`,
+              "bg-slate-100 text-slate-600 border-slate-400":location.pathname!=isolateBaseURL+`list-of-all/${reading.id}`})}>
               <span>
                 <h2 className='font-bold'>{reading.title}</h2>
                 <p className="text-sm">{reading.description}</p>
@@ -81,7 +81,7 @@ export default function ListOfAll() {
         </fieldset>
       </div>
       <fieldset className='w-full max-h-[650px] border-2 rounded-xl px-4 py-3 border-slate-300'>
-        {location.pathname == baseURL+"list-of-all/" && <>
+        {location.pathname == isolateBaseURL+"list-of-all/" && <>
           <legend className='flex items-center gap-2 px-2 font-bold'>
           <PiDropboxLogoDuotone  style={{fontSize:"1.5rem"}}/>
             {content.readDetails}
