@@ -4,6 +4,7 @@ import persian_fa from "react-date-object/locales/persian_fa"
 import { DateObject } from "react-multi-date-picker";
 import { Reading,Review } from "../interfaces/readingInterface"
 import { useReadingStore } from "../store/readingStore";
+import Status from "../content/status"
 // import { getState } from "zustand";
 
 
@@ -55,7 +56,7 @@ const useHelper = ()=>{
                     id:nextStage.id,
                     title:nextStage.title,
                     date:startDate.add(nextStage.value.duration,nextStage.value.type),
-                    status:i==reading.review.length-1?"done":"pending",
+                    status:i==reading.review.length-1?Status.done:Status.pending,
                 }
                 reviews.push(review);
             }
@@ -75,7 +76,7 @@ const useHelper = ()=>{
     
         return readings.filter((reading)=>{
             const lastReview = reading.review[reading.review.length-1] as Review;
-            if(lastReview && lastReview.status === "pending" ){
+            if(lastReview && lastReview.status === Status.pending ){
                 const lastReviewDate = new DateObject({
                     date:lastReview.date,
                     locale:persian_fa,

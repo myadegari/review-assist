@@ -11,6 +11,7 @@ const content={
     open:"بازکردن",
     reads:"مطالعات",
     readDetails:"جزئیات مطالعات",
-    delete:"حذف کردن"
+    delete:"حذف کردن",
+    firstReadingDate:"تاریخ مطالعه اولیه : "
 }
 export default content

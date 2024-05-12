@@ -14,10 +14,10 @@ export default function MainLayout() {
 
 
   return (
-    <main className="bg-gray-800 min-h-[100vh] min-w-[100%] grid place-items-center px-9 py-4 font-body">
+    <main className="bg-gray-800 min-h-[100vh] min-w-[100%] grid place-items-center md:px-9 py-4 font-body text-sm md:text-base ">
     <div className="flex flex-col w-full lg:w-[900px]">
       <nav className="flex bg-slate-100 p-5 pb-0 rounded-t-xl">
-        <Link 
+      <Link 
             to={isolateBaseURL}
             className={classNames('px-2 py-1 border-b-2 transition-all duration-200',{'border-lime-500 font-bold':status.home,
                 'text-gray-400 hover:text-black hover:font-bold border-transparent':!status.home

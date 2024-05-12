@@ -80,7 +80,7 @@ export default function Home() {
     }
 
     return (
-        <div className="bg-slate-50 rounded-b-xl text-gray-700 grid sm:grid-cols-2 gap-1 sm:gap-5 py-5 px-5">
+        <div className="bg-slate-50 rounded-b-xl text-gray-700 grid md:grid-cols-2 gap-1 md:gap-5 py-5 px-5 text-sm md:text-base ">
                 <form className='' onSubmit={handleSubmit}>
                     <fieldset className='flex flex-col px-4 py-3  rounded-xl border-2'>
                         <legend className='flex gap-2 px-2 font-bold'>
