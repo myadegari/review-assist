@@ -17,7 +17,7 @@ export default function ListOfAll() {
 
 
   return (
-    <div className="bg-slate-50 p-4 rounded-b-xl text-gray-700 grid md:grid-cols-2 py-5 md:px-12 gap-5 text-sm md:text-base ">
+    <div className="bg-slate-50 p-4 rounded-b-xl text-gray-700 grid md:grid-cols-2 py-5 px-5 gap-5 text-sm md:text-base ">
       <div className='flex flex-col gap-2'>
 
         <fieldset className='flex px-4 py-3 border rounded-xl border-slate-300 gap-1 flex-wrap overflow-x-auto '>
